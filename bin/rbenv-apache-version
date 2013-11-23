@@ -38,7 +38,7 @@ if [ -z "$PHPENV_APACHE_MODULE_PATH" ]; then
 fi
 
 PHPENV_PREFIX_PATH="${RBENV_ROOT}/versions/${PHPENV_APACHE_VERSION}"
-PHP_MODULE_PATH="${PHPENV_PREFIX_PATH}/libphp5.so"
+PHP_MODULE_PATH=`find ${PHPENV_PREFIX_PATH} -name libphp5.so`
 
 if [ ! -f "$PHP_MODULE_PATH" ]; then
   echo "Make sure the specified version is installed." >&2
